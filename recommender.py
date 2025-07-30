@@ -8,22 +8,14 @@ from sklearn.cluster import KMeans
 # ---------------------------------------------------
 # CONFIG
 # ---------------------------------------------------
-DATA_PATH = 'ml-1m/'   # change if your dataset is elsewhere
+DATA_PATH = './'   # change if your dataset is elsewhere
 PROFILE_PATH = 'user_profile.json'
 N_CLUSTERS = 5
 
 # ---------------------------------------------------
 # Load & preprocess data
 # ---------------------------------------------------
-ratings = pd.read_csv('ml-1m/ratings.dat', sep='::', engine='python',
-                      names=['userId', 'movieId', 'rating', 'timestamp'],
-                      encoding='latin-1')
-ratings.to_csv('ml-1m/ratings.csv', index=False)
 
-movies = pd.read_csv('ml-1m/movies.dat', sep='::', engine='python',
-                     names=['movieId', 'title', 'genres'],
-                     encoding='latin-1')
-movies.to_csv('ml-1m/movies.csv', index=False)
 
 print("Loading data...")
 movies_df = pd.read_csv(DATA_PATH + 'movies.csv')
